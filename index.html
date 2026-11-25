@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#10b981" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="数据结构学伴" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <title>数据结构智能学伴</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- 顶栏 -->
+    <header class="chat-header">
+      <div class="header-info">
+        <img class="header-avatar" src="icons/icon-192.png" alt="学伴头像" />
+        <div class="header-text">
+          <h1>数据结构智能学伴</h1>
+          <span class="header-status"><i class="dot"></i>在线 · 轻引导教学</span>
+        </div>
+      </div>
+      <button id="btnSettings" class="icon-btn" aria-label="设置">⚙️</button>
+    </header>
+
+    <!-- 会话区 -->
+    <main id="chatArea" class="chat-area">
+      <!-- 欢迎语由 JS 渲染 -->
+    </main>
+
+    <!-- 快捷按钮区 -->
+    <div id="quickBar" class="quick-bar">
+      <button class="quick-btn" data-mode="guide">🧭 这题怎么入手</button>
+      <button class="quick-btn" data-mode="step">👣 一步步引导我</button>
+      <button class="quick-btn" data-mode="direct">⚡ 直接给答案</button>
+    </div>
+
+    <!-- 输入区 -->
+    <footer class="input-area">
+      <textarea id="inputBox" rows="1" placeholder="输入你的题目或问题…" enterkeyhint="send"></textarea>
+      <button id="btnSend" class="send-btn" aria-label="发送">➤</button>
+    </footer>
+  </div>
+
+  <!-- 设置抽屉 -->
+  <div id="settingsMask" class="mask hidden"></div>
+  <aside id="settingsPanel" class="settings-panel">
+    <h2>⚙️ 连接设置</h2>
+    <p class="tip">填写你在扣子平台发布的数据结构学伴 Bot 信息（仅保存在本机）。</p>
+    <label>Bot ID
+      <input id="cfgBotId" type="text" placeholder="例如 7481234567890123456" autocomplete="off" />
+    </label>
+    <label>API Token（PAT）
+      <input id="cfgToken" type="password" placeholder="粘贴个人访问令牌" autocomplete="off" />
+    </label>
+    <label>API Base URL
+      <input id="cfgBaseUrl" type="text" value="https://api.coze.cn" autocomplete="off" />
+    </label>
+    <div class="settings-actions">
+      <button id="btnSaveCfg" class="primary">保存并连接</button>
+      <button id="btnTestCfg" class="ghost">测试连接</button>
+    </div>
+    <div id="cfgStatus" class="cfg-status"></div>
+    <button id="btnCloseSettings" class="close-btn">关闭</button>
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
